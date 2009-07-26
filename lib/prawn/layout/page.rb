@@ -59,6 +59,7 @@ module Prawn
     #  end
     #
     def header(top_left,options={},&block)   
+      @header_start_on_page = options.delete(:start_on_page) || @header_start_on_page
       @header = repeating_page_element(top_left,options,&block)
     end
         
@@ -74,6 +75,7 @@ module Prawn
     #   end    
     #
     def footer(top_left,options={},&block)       
+      @footer_start_on_page = options.delete(:start_on_page) || @footer_start_on_page
       @footer = repeating_page_element(top_left,options,&block)
     end
 
